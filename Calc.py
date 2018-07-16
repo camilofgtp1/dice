@@ -1,19 +1,16 @@
-class calculator:
-
-    def sum(x,y):
-        return x+y
+from random import randint
 
 
-    def subtraction(x,y):
-        return x-y
-
-    def multiplication(x,y):
-        return x*y
-    def division(x,y):
-        return x/y
+class Dice:
+    def roll(x, y):
+        x = randint(x, y)
+        return x
 
 
+answer = ''
 
-x= calculator.division(100,2)
-
-print(x)
+while answer != 'n':
+    answer = input('roll again? y/n')
+    dice1 = Dice.roll(1, 6)
+    dice2 = Dice.roll(1, 6)
+    print('first dice:', dice1, 'second dice', dice2)

@@ -3,8 +3,7 @@ from graphics import *
 
 
 class Dice:
-    @staticmethod
-    def roll(x, y):
+    def roll(self, x, y):
         x = randint(x, y)
         return x
 

@@ -1,4 +1,6 @@
 from random import randint
+from graphics import *
+
 
 
 class Dice:

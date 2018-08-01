@@ -1,23 +1,20 @@
 from random import randint
+import tkinter as tk
 
+# reestructure project to have each object in a file, and use main file for logic
 
-class Dice:
-    @staticmethod
-    def roll(x, y):
-        x = randint(x, y)
-        return x
+root= tk.Tk()
+root.title('dice roller')
 
+labeltitle = tk.Label(root, text="roll dice again? ")
+labeltitle.pack()
 
-answer = ''
+buttonYes= tk.Button(root, text="Yes", fg="blue")
+buttonYes.pack()
+buttonNo= tk.Button(root, text="No", fg="red")
+buttonNo.pack()
 
-roll_Database = open('roll history.txt', 'a')
+label1 = tk.Label(root, text='first dice:' + str(dice1))
+label1.pack()
 
-while answer != 'n':
-    answer = input('roll again? y/n')
-    dice1 = Dice.roll(1, 6)
-    dice2 = Dice.roll(1, 6)
-    dice_result = 'Dice 1: ' + '|' + str(dice1) + '|' + '<--------> Dice 2:' + '|' + str(dice2) + '|' + '\n'
-    print(dice_result)
-
-    roll_Database.write(dice_result)
-roll_Database.close()
+root.mainloop()
